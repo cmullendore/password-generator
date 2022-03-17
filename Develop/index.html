@@ -1,34 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Password Generator</title>
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
-    <div class="wrapper">
-      <header>
-        <h1>Password Generator</h1>
-      </header>
-      <div class="card">
-        <div class="card-header">
-          <h2>Generate a Password</h2>
-        </div>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>Password Generator</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <div class="wrapper">
+    <header>
+      <h1>Password Generator</h1>
+    </header>
+    <div class="card">
+      <div class="card-header">
+        <h2>Generate a Password</h2>
+      </div>
+      <form id="advancedForm">
         <div class="card-body">
-          <textarea
-            readonly
-            id="password"
-            placeholder="Your Secure Password"
-            aria-label="Generated Password"
-          ></textarea>
+          <textarea readonly id="password" placeholder="Your Secure Password"
+            aria-label="Generated Password"></textarea>
+        </div>
+        <div class="card-body" id="advanced-settings">
+          <div class="advanced-option">
+            <label for="allowed-length">Password Length: </label>
+            <input type="number" class="allowed" id="allowed-length" value="8" min="8" max="128"/>
+          </div>
+          <div class="advanced-option">
+            <label for="allowed-letters">Allowed Letters: </label>
+            <input type="text" class="allowed" id="allowed-letters" value="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ" size="52" maxlength="52"/>
+          </div>
+          <div class="advanced-option">
+            <label for="allowed-numbers">Allowed Numbers: </label>
+            <input type="text" class="allowed" id="allowed-numbers" value="0123456789" size="10" maxlength="10" />
+          </div>
+          <div class="advanced-option">
+            <label for="allowed-special">Allowed Special Characters: </label>
+            <input type="text" class="allowed" id="allowed-special" value=" !&quot;#$%&'()*+,-./:;&lt;=>?@[\]^_`{|}~" size="33" maxlength="33"/>
+          </div>
         </div>
         <div class="card-footer">
           <button id="generate" class="btn">Generate Password</button>
+          <button id="reset" class="btn">Reset Fields</button>
         </div>
-      </div>
+      </form>
     </div>
-    <script src="script.js"></script>
-  </body>
+  </div>
+  <script src="script.js"></script>
+</body>
+
 </html>
