@@ -16,7 +16,6 @@ var password = {
   special: " !\"#$%&'()*+,-./:;&lt;=>?@[\\]^_`{|}~",
 
   generate: function(allowedChars) {
-debugger;
     var charsArray = allowedChars.split("");
     var generatedPassword = [];
     for (i = 0; i < this.length; i++) {
@@ -51,7 +50,7 @@ function writePassword() {
   var allowedChars = letters + numbers + special;
 
   var passwordText = document.querySelector("#password");
-//debugger;
+
   passwordText.value = password.generate(allowedChars);
 
 }
