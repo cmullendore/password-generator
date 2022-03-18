@@ -15,6 +15,10 @@ var password = {
 
   generate: function() {
     var charsArray = (this.letters + this.numbers + this.special).split("");
+    if (charsArray.length < 10) {
+      return 'Insufficient number of possible characters provided.';
+    }
+    
     var generatedPassword = [];
     for (i = 0; i < this.length; i++) {
       var nextChar = charsArray[Math.floor(Math.random() * charsArray.length)]
